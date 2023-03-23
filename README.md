@@ -1,6 +1,8 @@
-# aws-tools - swift knife commands
+# AWS-tools - swift knife commands
 
 ## Commands
+
+`Work in progress`
 
 * Lambda Calculator
   
