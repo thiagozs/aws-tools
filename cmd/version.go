@@ -12,7 +12,7 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of aws-tools",
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Println("aws-tools", Version)
+		cmd.Println("awstools-cli", Version)
 	},
 }
 

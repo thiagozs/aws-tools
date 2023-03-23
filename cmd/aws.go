@@ -7,10 +7,6 @@ import (
 var awsCmd = &cobra.Command{
 	Use:   "aws",
 	Short: "AWS tools for managing AWS resources",
-	// Long:  ``,
-	// Run: func(cmd *cobra.Command, args []string) {
-
-	// },
 }
 
 func init() {

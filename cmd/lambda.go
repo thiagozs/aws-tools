@@ -10,6 +10,5 @@ var lambdaCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(lambdaCmd)
 	lambdaCmd.AddCommand(lambdaCalcCmd)
 }

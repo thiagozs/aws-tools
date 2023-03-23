@@ -7,7 +7,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "aws-tools",
+	Use:   "awstools-cli",
 	Short: "A brief description of your application",
 }
 
