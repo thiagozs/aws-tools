@@ -39,23 +39,19 @@ var lambdaCalcCmd = &cobra.Command{
 
 		switch format {
 		case "json":
-
 			output, err := utils.WriteJSON(data)
 			if err != nil {
 				fmt.Println(err)
 				return
 			}
-
 			fmt.Println(output)
 
 		case "csv":
-
 			output, err := utils.WriteCSV(data)
 			if err != nil {
 				fmt.Println(err)
 				return
 			}
-
 			fmt.Println(output)
 
 		default:

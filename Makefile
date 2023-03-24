@@ -1,7 +1,7 @@
 GOCMD:=go
 GOBUILD:=$(GOCMD) build
 OUTDIR:=out
-VERSION:=$(shell git ls-remote --refs --sort="version:refname" --tags | cut -d/ -f3- |tail -n1 | xargs -I{} echo '{} + 1' | bc)
+VERSION:=$(shell git ls-remote --refs --sort="version:refname" --tags | cut -d/ -f3- | tail -n1 | xargs -I{} echo '{} + 1' | bc)
 TEXT:=$(shell git log -1 --pretty=%B)
 NAME:=awstools-cli
 MAIN:=main.go
@@ -24,3 +24,8 @@ build:
 	zip $(OUTDIR)/$(NAME).rpi.zip $(OUTDIR)/$(NAME).rpi 
 	zip $(OUTDIR)/$(NAME).lin.zip $(OUTDIR)/$(NAME).lin
 	zip $(OUTDIR)/$(NAME).mac.zip $(OUTDIR)/$(NAME).mac
+
+release:
+	git tag -a $(VERSION) -m "v$(VERSION)"
+	git push origin $(VERSION)
+	hub release create -a $(OUTDIR)/$(NAME).rpi.zip -a $(OUTDIR)/$(NAME).lin.zip -a $(OUTDIR)/$(NAME).mac.zip -m "$(TEXT)" $(VERSION)
